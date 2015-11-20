@@ -111,9 +111,6 @@ tools/jenkins_scripts/mac/android/userconf.ini
 
 # CTags
 tags
-/scripting/lua/luajit/
-/tools/tojs/win32/
 /tools/tolua++/tolua++.Mac.zip
 /tools/tolua++/tolua++.rar
 /v*-deps-*.zip
-/external/version.json
