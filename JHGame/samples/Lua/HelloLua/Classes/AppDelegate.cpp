@@ -28,26 +28,22 @@ bool AppDelegate::applicationDidFinishLaunching()
     
 	// Set the design resolution
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(600, 800, kResolutionShowAll);
+	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(480, 320, kResolutionShowAll);
 #else
-	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(600, 800, kResolutionNoBorder);
+	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(480, 320, kResolutionNoBorder);
 #endif
 
     // turn on display FPS
-    //pDirector->setDisplayStats(true);
+    pDirector->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
-    //pDirector->setAnimationInterval(1.0 / 60);
+    pDirector->setAnimationInterval(1.0 / 60);
 
     // register lua engine
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
 
-	std::vector<std::string> searchPaths;
-	searchPaths.push_back("luaSprite\\");
-	CCFileUtils::sharedFileUtils()->setSearchPaths(searchPaths);
-
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("main.lua");
+    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("hello.lua");
     pEngine->executeScriptFile(path.c_str());
 
     return true;

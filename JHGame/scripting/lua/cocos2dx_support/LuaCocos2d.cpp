@@ -41568,36 +41568,6 @@ tolua_lerror:
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: enableShadow of class  CCLabelTTF */
-#ifndef TOLUA_DISABLE_tolua_Cocos2d_CCLabelTTF_enableShadow00
-static int tolua_Cocos2d_CCLabelTTF_enableShadow00(lua_State* tolua_S)
-{
-	tolua_Error tolua_err;
-	if (!tolua_isusertable(tolua_S,1,"CCLabelTTF",0,&tolua_err) ||
-		!tolua_isusertype(tolua_S,2,"const CCSize",0,&tolua_err) ||
-		!tolua_isnumber(tolua_S,3,0,&tolua_err) ||
-		!tolua_isnumber(tolua_S,4,0,&tolua_err) ||
-		!tolua_isboolean(tolua_S,5,0,&tolua_err) || !tolua_isnoobj(tolua_S,5,&tolua_err) ||
-		!tolua_isnoobj(tolua_S,6,&tolua_err)
-		)
-	{
-		goto tolua_lerror;
-	}
-	else
-	{
-		CCLabelTTF* self	= (CCLabelTTF*)tolua_tousertype(tolua_S,1,0);
-		CCSize* size		= (CCSize*)tolua_tousertype(tolua_S,2,0);
-		float shadowOpacity = (float)tolua_tonumber(tolua_S,3,0);
-		float shadowBlur    = (float)tolua_tonumber(tolua_S,4,0);
-		bool bValue			= (bool)tolua_toboolean(tolua_S,5,0);
-		self->enableShadow(*size, shadowOpacity, shadowBlur, bValue);
-	}
-	return 1;
-tolua_lerror:
-	return 0;
-}
-#endif //#ifndef TOLUA_DISABLE
-
 /* method: alignItemsVertically of class  CCMenu */
 #ifndef TOLUA_DISABLE_tolua_Cocos2d_CCMenu_alignItemsVertically00
 static int tolua_Cocos2d_CCMenu_alignItemsVertically00(lua_State* tolua_S)
@@ -69261,7 +69231,6 @@ TOLUA_API int tolua_Cocos2d_open (lua_State* tolua_S)
    tolua_function(tolua_S,"create",tolua_Cocos2d_CCLabelTTF_create01);
    tolua_function(tolua_S,"create",tolua_Cocos2d_CCLabelTTF_create02);
    tolua_function(tolua_S,"create",tolua_Cocos2d_CCLabelTTF_create03);
-   tolua_function(tolua_S,"enableShadow",tolua_Cocos2d_CCLabelTTF_enableShadow00);
   tolua_endmodule(tolua_S);
   tolua_constant(tolua_S,"kCCMenuStateWaiting",kCCMenuStateWaiting);
   tolua_constant(tolua_S,"kCCMenuStateTrackingTouch",kCCMenuStateTrackingTouch);
